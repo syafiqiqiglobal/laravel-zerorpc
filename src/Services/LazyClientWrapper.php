@@ -26,6 +26,8 @@ class LazyClientWrapper
 
     public function __call($name, $arguments)
     {
+        // Debug 0.1
+
         $this->_createClientIfNotExist();
         return call_user_func_array([$this->_client, $name], $arguments);
     }
